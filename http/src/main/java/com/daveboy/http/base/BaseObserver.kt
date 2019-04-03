@@ -2,9 +2,9 @@ package com.daveboy.http.base
 
 import android.Manifest.permission.ACCESS_NETWORK_STATE
 import android.support.annotation.RequiresPermission
-import android.util.Log
 import com.blankj.utilcode.util.NetworkUtils
 import com.blankj.utilcode.util.ToastUtils
+import com.daveboy.core.util.DLogUtil
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 import java.net.SocketTimeoutException
@@ -27,16 +27,13 @@ open abstract class BaseObserver<T>(private val showToast: Boolean = true) : Obs
     }
 
     override fun onNext(t: T) {
-        if(t is BaseResponse<*>&&t.code==0&&t.data==null){
-            onError(Exception(t.message))
-            return
-        }
         onFinal(t)
     }
 
     override fun onError(e: Throwable) {
         if(showToast)
             ToastUtils.showShort("请求异常，请检查网络情况")
+        DLogUtil.e(e.message?:"",e)
         onFinal(null,e)
     }
 
