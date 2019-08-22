@@ -2,6 +2,7 @@ package com.daveboy.http.base
 
 import android.Manifest.permission.ACCESS_NETWORK_STATE
 import android.support.annotation.RequiresPermission
+import com.blankj.utilcode.util.AppUtils
 import com.blankj.utilcode.util.NetworkUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.daveboy.core.util.DLogUtil
@@ -31,8 +32,12 @@ open abstract class BaseObserver<T>(private val showToast: Boolean = true) : Obs
     }
 
     override fun onError(e: Throwable) {
-        if(showToast)
+        if(AppUtils.isAppDebug())
+            ToastUtils.showShort(e.message)
+        else if(showToast)
             ToastUtils.showShort("请求异常，请检查网络情况")
+
+
         DLogUtil.e(e.message?:"",e)
         onFinal(null,e)
     }
