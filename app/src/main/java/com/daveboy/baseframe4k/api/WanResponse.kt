@@ -1,6 +1,6 @@
 package com.daveboy.baseframe4k.api
 
-import com.daveboy.http.base.IResponse
+import com.daveboy.core.http.core.IResponse
 
 /**
  * 玩android返回数据格式

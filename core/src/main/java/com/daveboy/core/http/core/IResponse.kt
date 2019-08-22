@@ -1,4 +1,4 @@
-package com.daveboy.http.base
+package com.daveboy.core.http.core
 
 /**
  * 网络返回规范接口

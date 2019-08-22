@@ -1,8 +1,8 @@
-package com.daveboy.http.util
+package com.daveboy.core.http.util
 
+import com.daveboy.core.http.core.IResponse
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.android.schedulers.AndroidSchedulers
-import com.daveboy.http.base.IResponse
 import com.trello.rxlifecycle2.LifecycleTransformer
 import io.reactivex.Observable
 import io.reactivex.ObservableSource

@@ -1,6 +1,6 @@
-package com.daveboy.http.config
+package com.daveboy.core.http.config
 
-import com.daveboy.http.core.RetrofitManager
+import com.daveboy.core.http.core.RetrofitManager
 
 /**
  * 需要配置的参数

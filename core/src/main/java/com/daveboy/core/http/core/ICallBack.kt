@@ -1,4 +1,4 @@
-package com.daveboy.http.base
+package com.daveboy.core.http.core
 
 public interface ICallBack<out T> {
     /**

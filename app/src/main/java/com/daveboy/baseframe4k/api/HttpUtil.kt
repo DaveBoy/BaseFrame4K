@@ -1,6 +1,6 @@
 package com.daveboy.baseframe4k.api
 
-import com.daveboy.http.core.RetrofitManager
+import com.daveboy.core.http.core.RetrofitManager
 
 /**
  * 简化写法

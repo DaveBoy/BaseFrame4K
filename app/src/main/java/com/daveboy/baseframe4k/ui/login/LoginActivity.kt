@@ -4,12 +4,11 @@ import android.os.Bundle
 import com.blankj.utilcode.util.ToastUtils
 import com.daveboy.baseframe4k.R
 import com.daveboy.baseframe4k.api.service
-import com.daveboy.http.base.BaseObserver
-import com.daveboy.http.core.RetrofitManager
-import com.daveboy.http.util.handleResult
+import com.daveboy.core.http.base.BaseObserver
+import com.daveboy.core.http.core.RetrofitManager
+import com.daveboy.core.http.util.handleResult
 import com.trello.rxlifecycle2.android.ActivityEvent
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : RxAppCompatActivity() {
 
@@ -27,7 +26,7 @@ class LoginActivity : RxAppCompatActivity() {
             RetrofitManager.service
                 .login(userName,password)
                 .compose(handleResult(this.bindUntilEvent(ActivityEvent.DESTROY)))
-                .subscribe(object :BaseObserver<Any>(){
+                .subscribe(object : BaseObserver<Any>(){
                     override fun onFinal(t: Any?, error: Throwable?) {
                         t?.also{
                             ToastUtils.showShort("登录成功")

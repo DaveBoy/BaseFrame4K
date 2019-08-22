@@ -1,9 +1,8 @@
 package com.daveboy.baseframe4k
 
 import android.app.Application
-import com.daveboy.baseframe4k.api.ApiService
 import com.daveboy.core.base.Dcore
-import com.daveboy.http.config.HttpConfig
+import com.daveboy.core.http.config.HttpConfig
 
 class DApplication :Application(){
     override fun onCreate() {

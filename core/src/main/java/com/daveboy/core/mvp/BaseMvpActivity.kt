@@ -1,7 +1,7 @@
 package com.daveboy.core.mvp
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 abstract class BaseMvpActivity: AppCompatActivity(), IView{
     override fun onCreate(savedInstanceState: Bundle?) {

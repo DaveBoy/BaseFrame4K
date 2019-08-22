@@ -1,7 +1,6 @@
 package com.daveboy.baseframe4k.api
 
 import com.daveboy.baseframe4k.bean.LoginResponse
-import com.daveboy.http.base.BaseResponse
 import io.reactivex.Observable
 import retrofit2.http.POST
 import retrofit2.http.Query

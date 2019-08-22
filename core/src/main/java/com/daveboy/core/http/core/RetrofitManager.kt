@@ -1,4 +1,4 @@
-package com.daveboy.http.core
+package com.daveboy.core.http.core
 
 import android.util.Log
 import okhttp3.OkHttpClient

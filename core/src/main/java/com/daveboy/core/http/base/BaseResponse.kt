@@ -1,4 +1,6 @@
-package com.daveboy.http.base
+package com.daveboy.core.http.base
+
+import com.daveboy.core.http.core.IResponse
 
 /**
  * 规范的网络请求返回接口的基类
