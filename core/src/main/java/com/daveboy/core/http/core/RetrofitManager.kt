@@ -1,6 +1,7 @@
 package com.daveboy.core.http.core
 
-import android.util.Log
+import com.blankj.utilcode.util.AppUtils
+import com.daveboy.core.util.logi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -16,13 +17,18 @@ object RetrofitManager {
 
     fun init(baseurl:String){
         val httpLoggingInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
-            Log.i(this.javaClass.simpleName,it)
-        })
-        httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+            logi(it)
+        }).apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
         val client: OkHttpClient =
             OkHttpClient
                 .Builder()
-                .addInterceptor(httpLoggingInterceptor).build()
+                .apply {
+                    if(AppUtils.isAppDebug())
+                        addInterceptor(httpLoggingInterceptor)
+                }
+                .build()
         retrofit = Retrofit
             .Builder()
             .baseUrl(baseurl)
