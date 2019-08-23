@@ -21,6 +21,36 @@ android {
 }
 
 dependencies {
-    implementation project(':lib')
+    api(MvvmExt.kotlin)
+    api(MvvmExt.appcompat)
+    api(MvvmExt.ktx)
+    api(MvvmExt.constraintlayout)
+    api(MvvmExt.lifecycle)
+    api(MvvmExt.viewmodelKtx)
+    api(MvvmExt.retrofit)
+    api(MvvmExt.converterGson)
+    api(MvvmExt.coroutines)
+    api(MvvmExt.okhttp3Log)
+    api(MvvmExt.rxjavaAdapter)
+    api(MvvmExt.anko)
+    api(MvvmExt.material)
+    api(MvvmExt.logger)
+    api(MvvmExt.rxandroid)
+    api(MvvmExt.rxkotlin)
+    api(MvvmExt.rxpermissions)
+    api(MvvmExt.bravh)
+    api(MvvmExt.smart)
+    api(MvvmExt.utilcode)
+
+    api(MvvmExt.objectboxAndroid)
+    api(MvvmExt.objectboxKotlin)
+    //kapt(MvvmExt.objectboxProcessor)
+
+
+
+
+    testImplementation(MvvmExt.junit)
+    androidTestImplementation(MvvmExt.extUnit)
+    androidTestImplementation(MvvmExt.espresso)
 
 }

@@ -16,8 +16,10 @@ object RetrofitManager {
 
 
     fun init(baseurl:String){
-        val httpLoggingInterceptor = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
-            logi(it)
+        val httpLoggingInterceptor = HttpLoggingInterceptor(object:HttpLoggingInterceptor.Logger{
+            override fun log(message: String) {
+                logi(message)
+            }
         }).apply {
             level = HttpLoggingInterceptor.Level.BODY
         }

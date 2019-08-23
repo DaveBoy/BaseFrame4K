@@ -30,7 +30,7 @@ abstract class BaseObserver<T>(private val showToast: Boolean = true) : Observer
     override fun onError(e: Throwable) {
         loge(e)
         if(showToast)
-            showToast(errorCast(e))
+            showToast(e.errorCast())
         onFinal(error = e)
     }
 
