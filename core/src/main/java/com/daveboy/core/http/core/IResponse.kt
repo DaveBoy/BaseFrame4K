@@ -7,5 +7,5 @@ interface IResponse<T> {
     fun isSuccess():Boolean
     fun getCode():Int
     fun getMessage():String?
-    fun getData():T?
+    fun getData():T
 }

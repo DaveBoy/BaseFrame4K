@@ -7,11 +7,8 @@ import java.net.SocketTimeoutException
  * @param throwable Throwable?
  * @return String
  */
-fun errorCast(throwable: Throwable?):String{
-    if(throwable==null){
-        return "未知错误"
-    }
-    return when(throwable){
+fun Throwable?.errorCast():String{
+    return when(this){
         is SocketTimeoutException->{
             "请求超时"
         }

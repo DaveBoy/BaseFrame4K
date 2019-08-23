@@ -1,16 +1,20 @@
 package com.daveboy.core.mvp
 
-abstract class BasePresenter: IPresenter {
-    protected var view:IView?=null
-    override fun attachView(v: IView) {
-        view=v
+abstract class BasePresenter<V:IView, out M : BaseModel> {
+    protected var view: V? = null
+    protected val model: M by lazy {
+        createModel()
     }
 
-    override fun detachView() {
-        view=null
+
+    fun attachView(v: V) {
+        view = v
     }
 
-    override fun isViewAttached():Boolean {
-        return view==null
+    fun detachView() {
+        view = null
     }
+
+    fun isViewAttached() = view == null
+    abstract fun createModel(): M
 }

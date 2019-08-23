@@ -1,25 +1,22 @@
 package com.daveboy.core.mvp
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.daveboy.core.base.AbstractActivity
 
-abstract class BaseMvpActivity: AppCompatActivity(), IView{
+abstract class BaseMvpActivity<T: BasePresenter<IView,BaseModel>>: AbstractActivity(), IView{
+    protected val presenter:T by lazy {
+        createPresenter()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        initPresenter()
-        getPresenter()?.attachView(this)
+        presenter.attachView(this)
     }
 
 
     override fun onDestroy() {
-        getPresenter()?.detachView()
+        presenter.detachView()
         super.onDestroy()
     }
 
-    /**
-     * 初始化Presenter
-     * @return P
-     */
-    abstract fun initPresenter()
-    abstract fun getPresenter():IPresenter?
+    abstract fun createPresenter():T
 }
