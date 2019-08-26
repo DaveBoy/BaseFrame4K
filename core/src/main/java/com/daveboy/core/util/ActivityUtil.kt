@@ -1,5 +1,6 @@
 package com.daveboy.core.util
 
+import android.app.Activity
 import android.content.Intent
 import com.daveboy.core.base.AbstractActivity
 import com.daveboy.core.mvp.IView
