@@ -8,6 +8,5 @@ class DApplication :Application(){
     override fun onCreate() {
         super.onCreate()
         Dcore.init(this)
-        HttpConfig("https://www.wanandroid.com")
     }
 }

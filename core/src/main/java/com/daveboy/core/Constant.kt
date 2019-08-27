@@ -5,4 +5,5 @@ package com.daveboy.core
  */
 object Constant{
     var responseSuccessCode=0
+    var baseUrl="http://ww.baidu.com"
 }

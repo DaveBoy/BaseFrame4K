@@ -1,6 +1,7 @@
 package com.daveboy.core.http.core
 
 import com.blankj.utilcode.util.AppUtils
+import com.daveboy.core.Constant
 import com.daveboy.core.util.logi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,10 +13,12 @@ import retrofit2.converter.gson.GsonConverterFactory
  * Retrofit单例
  */
 object RetrofitManager {
-    private lateinit var retrofit: Retrofit
+    private  val retrofit: Retrofit by lazy {
+        init(Constant.baseUrl)
+    }
 
 
-    fun init(baseurl:String){
+    fun init(baseurl:String):Retrofit{
         val httpLoggingInterceptor = HttpLoggingInterceptor(object:HttpLoggingInterceptor.Logger{
             override fun log(message: String) {
                 logi(message)
@@ -31,7 +34,7 @@ object RetrofitManager {
                         addInterceptor(httpLoggingInterceptor)
                 }
                 .build()
-        retrofit = Retrofit
+        return Retrofit
             .Builder()
             .baseUrl(baseurl)
             .addConverterFactory(GsonConverterFactory.create())

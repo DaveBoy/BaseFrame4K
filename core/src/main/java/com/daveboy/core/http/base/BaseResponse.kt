@@ -1,5 +1,6 @@
 package com.daveboy.core.http.base
 
+import com.daveboy.core.Constant
 import com.daveboy.core.http.core.IResponse
 
 /**
@@ -11,7 +12,7 @@ data class BaseResponse<T>(
     private var data: T?
 ) : IResponse<T> {
     override fun isSuccess(): Boolean {
-        return code == 200
+        return code == Constant.responseSuccessCode
     }
 
     override fun getCode(): Int {
