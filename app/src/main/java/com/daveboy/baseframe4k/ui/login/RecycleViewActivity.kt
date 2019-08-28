@@ -1,13 +1,14 @@
 package com.daveboy.baseframe4k.ui.login
 
+import android.app.IntentService
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
-import android.icu.util.TimeUnit
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.blankj.utilcode.util.ConvertUtils
 import com.blankj.utilcode.util.ScreenUtils
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
@@ -15,10 +16,6 @@ import com.daveboy.baseframe4k.R
 import com.daveboy.baseframe4k.bean.User
 import com.daveboy.core.base.AbstractActivity
 import kotlinx.android.synthetic.main.activity_login.*
-import androidx.core.content.ContextCompat.getSystemService
-import com.blankj.utilcode.util.ConvertUtils
-import androidx.core.app.ComponentActivity.ExtraData
-import com.blankj.utilcode.util.TimeUtils
 
 
 class RecycleViewActivity: AbstractActivity() {
