@@ -2,7 +2,7 @@ package com.daveboy.core.http.core
 
 import com.blankj.utilcode.util.AppUtils
 import com.daveboy.core.Constant
-import com.daveboy.core.util.logi
+import com.daveboy.core.util.logI
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -21,7 +21,7 @@ object RetrofitManager {
     fun init(baseurl:String):Retrofit{
         val httpLoggingInterceptor = HttpLoggingInterceptor(object:HttpLoggingInterceptor.Logger{
             override fun log(message: String) {
-                logi(message)
+                logI(message)
             }
         }).apply {
             level = HttpLoggingInterceptor.Level.BODY

@@ -2,7 +2,7 @@ package com.daveboy.core.http.base
 
 import com.blankj.utilcode.util.NetworkUtils
 import com.daveboy.core.util.errorCast
-import com.daveboy.core.util.loge
+import com.daveboy.core.util.logE
 import com.daveboy.core.util.showToast
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
@@ -28,7 +28,7 @@ abstract class BaseObserver<T>(private val showToast: Boolean = true) : Observer
     }
 
     override fun onError(e: Throwable) {
-        loge(e)
+        logE(e)
         if(showToast)
             showToast(e.errorCast())
         onFinal(error = e)
