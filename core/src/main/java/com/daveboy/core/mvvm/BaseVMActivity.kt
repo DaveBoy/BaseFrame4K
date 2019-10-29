@@ -1,7 +1,7 @@
 package com.daveboy.core.mvvm
 
-import android.content.Intent
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import com.daveboy.core.base.AbstractActivity
 import java.lang.reflect.ParameterizedType
 
@@ -16,7 +16,7 @@ abstract class BaseVMActivity<VM:BaseViewModel>:AbstractActivity() {
 
     @Suppress("UNCHECKED_CAST")
     open fun createViewModel():VM{
-       return (this::class.java.genericSuperclass as ParameterizedType).actualTypeArguments[0] as VM
+       return ViewModelProvider(this).get((this::class.java.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<VM>)
     }
     protected abstract fun createObserver()
 

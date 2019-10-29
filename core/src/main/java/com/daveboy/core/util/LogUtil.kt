@@ -5,15 +5,15 @@ import com.orhanobut.logger.Logger
 /**
  * 日志类
  */
-fun loge(throwable: Throwable? , message: String ="",vararg args: Any? ){
+fun logE(throwable: Throwable? , message: String ="",vararg args: Any? ){
     Logger.e(throwable,message,args)
 }
-fun logi(message: String ,vararg args: Any?){
+fun logI(message: String ,vararg args: Any?){
     Logger.i(message,args)
 }
-fun logw(message: String ,vararg args: Any?){
+fun logW(message: String ,vararg args: Any?){
     Logger.w(message,args)
 }
-fun logd(message: String ,vararg args: Any?){
+fun logD(message: String ,vararg args: Any?){
     Logger.d(message,args)
 }

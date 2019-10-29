@@ -7,13 +7,13 @@ import com.daveboy.core.mvp.IView
 import com.daveboy.core.mvvm.CustomException
 import com.daveboy.core.mvvm.ViewState
 
-inline fun <reified T : AbstractActivity> AbstractActivity.toActivity(params: Intent.() -> Unit = {}) {
+inline fun <reified T : Activity> Activity.toActivity(params: Intent.() -> Unit = {}) {
     startActivity(Intent(this, T::class.java).apply {
         params()
     })
 }
 
-fun <T> IView.parseState(
+fun <T> AbstractActivity.parseState(
     viewState: ViewState<T>,
     onSuccess: (T) -> Unit,
     onError: ((CustomException) -> Unit)? = null,
@@ -21,17 +21,15 @@ fun <T> IView.parseState(
 ) {
     when (viewState) {
         is ViewState.Loading -> {
-            showLoading()
+            showProgress()
             onLoading?.run { this }
         }
         is ViewState.Success -> {
-            hideLoading()
-            viewState.data?.run {
-                onSuccess(this)
-            }
+            dismissProgress()
+            onSuccess(viewState.data)
         }
         is ViewState.Error -> {
-            hideLoading()
+            dismissProgress()
             onError?.run { this(viewState.error) }
         }
     }

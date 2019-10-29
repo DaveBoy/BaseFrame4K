@@ -64,7 +64,10 @@ object MvvmExt {
     const val objectboxKotlin = "io.objectbox:objectbox-kotlin:${Version.objectboxVersion}"
     const val objectboxAndroid = "io.objectbox:objectbox-android:${Version.objectboxVersion}"
     const val objectboxGradlePlugin = "io.objectbox:objectbox-gradle-plugin:${Version.objectboxVersion}"
-    //https://github.com/orhanobut/logger
+    /**
+     * logger
+     * https://github.com/orhanobut/logger
+     */
     const val logger =  "com.orhanobut:logger:${Version.loggerVersion}"
 
     /**

@@ -8,8 +8,8 @@ import com.daveboy.core.http.core.IResponse
  */
 data class BaseResponse<T>(
     private var code: Int,
-    private var message: String?,
-    private var data: T?
+    private var message: String,
+    private var data: T
 ) : IResponse<T> {
     override fun isSuccess(): Boolean {
         return code == Constant.responseSuccessCode
@@ -19,11 +19,11 @@ data class BaseResponse<T>(
         return code
     }
 
-    override fun getMessage(): String? {
+    override fun getMessage(): String {
         return message
     }
 
-    override fun getData(): T? {
+    override fun getData(): T {
         return data
     }
 

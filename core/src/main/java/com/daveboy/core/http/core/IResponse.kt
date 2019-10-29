@@ -6,6 +6,6 @@ package com.daveboy.core.http.core
 interface IResponse<T> {
     fun isSuccess():Boolean
     fun getCode():Int
-    fun getMessage():String?
-    fun getData():T?
+    fun getMessage():String
+    fun getData():T
 }
