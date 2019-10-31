@@ -8,18 +8,16 @@ import androidx.core.content.ContextCompat
 import com.daveboy.core.R
 
 abstract class AbstractActivity : AppCompatActivity() {
-    var dialog: Dialog? = null
+    protected var dialog: Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutID())
-        initPre()
         initView()
         initListener()
         initData()
         initLast()
     }
 
-    protected fun initPre() = Unit
 
     abstract fun getLayoutID(): Int
     abstract fun initView()

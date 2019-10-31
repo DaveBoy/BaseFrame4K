@@ -25,7 +25,6 @@ abstract class AbstractFragment:Fragment() {
         initLast()
     }
 
-    protected fun initPre() = Unit
 
     abstract fun getLayoutID(): Int
     abstract fun initView()
