@@ -13,12 +13,11 @@ abstract class AbstractFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(getLayoutID(), container, false);
+        return inflater.inflate(getLayoutID(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initPre()
         initView()
         initListener()
         initData()

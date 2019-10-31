@@ -7,10 +7,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 
-/**
- * Created by luyao
- * on 2019/6/18 15:47
- */
 
 const val TAG ="ktx"
 

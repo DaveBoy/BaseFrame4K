@@ -1,17 +1,9 @@
 package com.daveboy.core.util
 
-import android.app.Activity
-import android.content.Intent
 import com.daveboy.core.base.AbstractActivity
-import com.daveboy.core.mvp.IView
 import com.daveboy.core.mvvm.CustomException
 import com.daveboy.core.mvvm.ViewState
 
-inline fun <reified T : Activity> Activity.toActivity(params: Intent.() -> Unit = {}) {
-    startActivity(Intent(this, T::class.java).apply {
-        params()
-    })
-}
 
 fun <T> AbstractActivity.parseState(
     viewState: ViewState<T>,

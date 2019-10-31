@@ -5,13 +5,15 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 
 /**
- * Created by luyao
- * on 2019/6/18 16:27
+ * 权限fragment
  */
 class KtxPermissionFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /**
+         * 当设备旋转时,fragment不会随托管activity一起销毁并重建
+         */
         retainInstance = true
     }
 

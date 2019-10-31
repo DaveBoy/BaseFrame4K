@@ -3,15 +3,16 @@ package com.daveboy.core.base
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.ProgressBar
+import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.daveboy.core.R
 
-abstract class AbstractActivity : AppCompatActivity() {
+abstract class AbstractActivity(@LayoutRes val layoutID:Int) : AppCompatActivity() {
     protected var dialog: Dialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(getLayoutID())
+        setContentView(layoutID)
         initView()
         initListener()
         initData()
@@ -19,7 +20,6 @@ abstract class AbstractActivity : AppCompatActivity() {
     }
 
 
-    abstract fun getLayoutID(): Int
     abstract fun initView()
     abstract fun initListener()
     abstract fun initData()

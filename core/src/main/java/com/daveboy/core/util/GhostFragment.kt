@@ -3,6 +3,7 @@ package com.daveboy.core.util
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import androidx.fragment.app.Fragment
 
 /**
@@ -21,6 +22,14 @@ class GhostFragment : Fragment() {
         this.requestCode = requestCode
         this.intent = intent
         this.callback = callback
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        /**
+         * 当设备旋转时,fragment不会随托管activity一起销毁并重建
+         */
+        retainInstance = true
     }
 
     override fun onAttach(context: Context) {

@@ -6,6 +6,7 @@ import android.content.ContentValues
 import android.database.Cursor
 import android.net.Uri
 import androidx.lifecycle.ProcessLifecycleOwner
+import com.daveboy.core.base.Dcore
 import com.daveboy.core.lifecycle.AppLifeObserverExt
 import com.daveboy.core.lifecycle.LifeCycleCallBackExt
 
@@ -32,6 +33,7 @@ class InitContentProvider : ContentProvider() {
         app = application
         if (watchActivityLife) application.registerActivityLifecycleCallbacks(LifeCycleCallBackExt())
         if (watchAppLife) ProcessLifecycleOwner.get().lifecycle.addObserver(AppLifeObserverExt())
+        Dcore.init(app)
     }
 
     override fun insert(uri: Uri, values: ContentValues?): Uri? = null
